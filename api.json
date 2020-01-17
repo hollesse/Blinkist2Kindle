@@ -1,0 +1,17 @@
+{
+  "blinkist":{
+    "protocol": "https",
+    "baseurl": "api.blinkist.com",
+    "version": "v4",
+    "endpoints": {
+      "client_info": "clients.json",
+      "token": "tokens/tokens.json",
+      "free_books": "free_books",
+      "books": "books"
+    },
+    "client_info_endpoint": "https://api.blinkist.com/v4/clients.json",
+    "token_endpoint": "https://api.blinkist.com/v4/tokens/tokens.json",
+    "free_books_endpoint": "https://api.blinkist.com/v4/free_books",
+    "book_endpoint": "https://api.blinkist.com/v4/books/"
+  }
+}
