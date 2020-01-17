@@ -1,2 +1,5 @@
 venv/
 config.json
+blinkist/
+.idea/
+__pycache__/
