@@ -1,0 +1,22 @@
+{
+	"blinkist": {
+		"email": "",
+		"password": "",
+		"languages": ["en"]
+	},
+	"email": {
+		"sender": {
+			"name": "",
+			"email": "",
+			"username": "",
+			"password": "",
+			"smtp_server": "",
+			"smtp_port": 
+		},
+		"receivers": [{
+			"name": "",
+			"email": "",
+			"format": ""
+			}]
+	}
+}
