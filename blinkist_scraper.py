@@ -30,8 +30,12 @@ class BlinkistScraper(Scraper):
                 'email': self.__config['email'],
                 'password': self.__config['password']}
         r = requests.post(self.__api.get_url('client_info'), data=json.dumps(data))
-        response = r.json()
-        return response['client']['client_id'], response['client']['client_secret']
+        try:
+            response = r.json()
+            return response['client']['client_id'], response['client']['client_secret']
+        except Exception as e:
+            logging.error("Error response " + str(e) + ", code: " + str(r.status_code) + ", text: " + str(r.text))
+            exit()
 
     def __get_token(self, email, password) -> str:
         (client_id, client_secret) = self.__get_client_information()
