@@ -69,16 +69,16 @@ class BookToMarkDownConverter(BookConverter):
         return self.h3(heading) + '\n' + self.convert_html_text(text) + '\n'
 
     def get_about_the_book(self, book: Book) -> str:
-        return self.h3_with_text('Über das Buch', book.about_the_book)
+        return self.h3_with_text(self.get_about_the_author_title(book.language), book.about_the_book)
 
     def get_who_should_read(self, book: Book) -> str:
-        return self.h3_with_text('Für wen ist dieses Buch interessant', book.who_should_read)
+        return self.h3_with_text(self.get_who_should_read_title(book.language), book.who_should_read)
 
     def get_about_the_author(self, book: Book) -> str:
-        return self.h3_with_text('Über den Author', book.about_the_author)
+        return self.h3_with_text(self.get_about_the_author_title(book.language), book.about_the_author)
 
     def get_table_of_contents(self, book: Book) -> str:
-        payload = self.h2('Inhaltsverzeichnis')
+        payload = self.h2('TOC')
         for chapter in book.chapters:
             payload += str(chapter.order_number) + '. ' + chapter.title + '\n'
         return payload
